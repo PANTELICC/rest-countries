@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap');
+body,.dark{
+    --body:hsl(207, 26%, 17%);
+    --elements:hsl(209, 23%, 22%);
+    --text:hsl(0,0%,100%);
+    --gray:hsl(0, 0%, 52%);
+}
+.light{
+    --body:hsl(0, 0%, 93%);
+    --elements:hsl(0, 0%, 100%);
+    --text:hsl(209, 23%, 22%);
+    --gray:hsl(0, 0%, 52%);
+
+}
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    background: var(--body);
+    color: var(--text);
+    font-family: 'Nunito Sans', sans-serif;
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 50px ;
+    background: var(--elements);
+    align-items: center;
+}
+.header h3{
+    cursor: pointer;
+}
+.search{
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin:50px auto;
+}
+.search .searchsection{
+    background: var(--elements);
+    width: 400px;
+    display: flex;
+    border-radius: 5px;
+    padding: 5px;
+}
+.search input{
+    background: var(--elements);
+    outline: 0;
+    border: 0;
+    font-size: 24px;
+    padding: 10px;
+    color: var(--text);
+}
+.search input::placeholder{
+    font-size: 16px;
+}
+.search button{
+    font-size: 20px;
+    background: transparent;
+    border: 0;
+    outline: 0;
+    color: var(--text);
+    margin: 5px;
+}
+select{
+    outline: 0;
+    background: var(--elements);
+    border-radius: 5px;
+    border: 0;
+    border: 0;
+    width: 200px;
+    color: var(--text);
+    font-size: 18px;
+    cursor: pointer ;
+    margin-right: 25px;
+}
+.main{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.main .card{
+    width: 23%;
+    margin-right: 2%;
+    margin-bottom: 40px;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+    background: var(--elements);
+    border-radius: 10px;
+    cursor: pointer;
+}
+.main .card img{
+    width: 100%;
+    align-items: center;
+    margin-bottom: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.main .card p{
+    margin-top: 10px;
+}
+.main .card .card-content{
+    padding: 20px;
+}
+.loader {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    border: 4px solid #Fff;
+    top: 50%;
+    left: 50%;
+    animation: loader 2s infinite ease;
+  }
+  
+  .loader-inner {
+    vertical-align: top;
+    display: inline-block;
+    width: 100%;
+    background-color: #fff;
+    animation: loader-inner 2s infinite ease-in;
+  }
+  
+  @keyframes loader {
+    0% {
+      transform: rotate(0deg);
+    }
+    
+    25% {
+      transform: rotate(180deg);
+    }
+    
+    50% {
+      transform: rotate(180deg);
+    }
+    
+    75% {
+      transform: rotate(360deg);
+    }
+    
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes loader-inner {
+    0% {
+      height: 0%;
+    }
+    
+    25% {
+      height: 0%;
+    }
+    
+    50% {
+      height: 100%;
+    }
+    
+    75% {
+      height: 100%;
+    }
+    
+    100% {
+      height: 0%;
+    }
+  }
+@media screen and (max-width:1300px){
+    .main {
+        justify-content: space-between;
+    }
+    .main .card{
+        width: 45%;
+    }
+
+}
+@media screen and (max-width:900px){
+    .search{
+        padding: 20px 10px ;
+    }
+}
+@media screen and (max-width:700px) {
+    .header{
+
+        padding: 20px 10px ;
+    }
+    .header h1{
+        font-size: 150%;
+    }
+    .header h3{
+        font-size: 100%;
+    }
+    .search{
+        flex-direction: column;
+    }
+    .search .searchsection {
+        width: 90%;
+    }
+    .search input{
+        width: 80%;
+    }
+    select{
+        padding: 15px;
+        margin-top: 15px;
+    }
+    .main{
+        justify-content: center;
+    }
+    .main .card{
+        width: 90%;
+    }
+}
+@media screen and (max-width:500px) {
+    .header{
+
+        padding: 20px 10px ;
+    }
+    .header h1{
+        font-size: 120%;
+    }
+    .header h3{
+        font-size: 80%;
+    }
+
+}
