@@ -31,6 +31,7 @@ body{
 .header h3{
     cursor: pointer;
 }
+
 .search{
     display: flex;
     justify-content: space-between;
@@ -75,6 +76,7 @@ select{
     cursor: pointer ;
     margin-right: 25px;
 }
+
 .main{
     width: 90%;
     margin: auto;
@@ -125,7 +127,67 @@ select{
     background-color: #fff;
     animation: loader-inner 2s infinite ease-in;
   }
-  
+
+.detail {
+    width: 90%;
+    margin:50px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center ;
+}
+.detail .sel {
+    align-items: flex-start;
+    justify-content: flex-start;
+    display: flex;
+    flex-direction: column;
+}
+.detail .sel img {
+    width: 80%;
+    border-radius: 10px;
+    margin-top: 30px;
+}
+.back {
+    background-color: var(--elements);
+    padding: 10px 30px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.445);
+    cursor: pointer;
+}
+.detail .text {
+    width: 50%;
+}
+.detail .text .row {
+    display: flex;
+    gap: 100px;
+    margin: 40px 0;
+}
+.detail .text ul {
+    list-style: none;
+}
+.detail .text ul li {
+    margin-top: 5px;
+}
+.detail .text ul li span {
+    font-weight: 900;
+}
+.row2 {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+
+}
+.border {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.border p {
+    background-color: var(--elements);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.445);
+    padding: 10px ;
+    border-radius: 5px ;
+}
   @keyframes loader {
     0% {
       transform: rotate(0deg);
@@ -169,18 +231,59 @@ select{
       height: 0%;
     }
   }
-@media screen and (max-width:1300px){
+@media screen and (max-width:1425px){
     .main {
         justify-content: space-between;
     }
     .main .card{
         width: 45%;
     }
-
+    .detail {
+        width: 95%;
+        margin-top: 100px;
+        gap: 0px;
+    }
+    .detail .text {
+        width: 80%;
+        padding: 0;
+    }
+    .detail .sel img {
+        width: 90%;
+    }
+    .detail .text .row {
+        gap: 20px;
+    }
 }
-@media screen and (max-width:900px){
+@media screen and (max-width:1050px){
     .search{
         padding: 20px 10px ;
+    }
+    .detail  {
+        flex-direction: column;
+        justify-content: center;
+        margin: 35px auto;
+    }
+    .detail .sel {
+        width: 90%;
+    }
+    .detail .sel img {
+        width: 100%;
+        margin: auto;
+    }
+    .back {
+        margin-bottom: 20px;
+    }
+    .detail .text {
+        width: 90%;
+        margin: 50px auto;
+    }
+    .detail .text .row {
+        flex-direction: column;
+    }
+    .row2 {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
     }
 }
 @media screen and (max-width:700px) {
