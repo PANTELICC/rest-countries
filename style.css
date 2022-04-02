@@ -12,6 +12,16 @@ body,.dark{
     --gray:hsl(0, 0%, 52%);
 
 }
+/*Scrollbar*/
+::-webkit-scrollbar {
+    width: 15px;
+  }
+::-webkit-scrollbar-track {
+    background: var(--elements); 
+  }
+::-webkit-scrollbar-thumb {
+    background: var(--body); 
+  }
 *{
     padding: 0;
     margin: 0;
