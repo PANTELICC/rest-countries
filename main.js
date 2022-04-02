@@ -1,3 +1,4 @@
+//theme switcher
 const themebtt = document.querySelector(".theme");
 var ind = true;
 themebtt.addEventListener("click",function(){
@@ -12,12 +13,14 @@ themebtt.addEventListener("click",function(){
         ind = true;
     }
 });
+//return all countruies on load
 const flags = document.getElementById('main');
 document.addEventListener('DOMContentLoaded', e => {
     fetchData('https://restcountries.com/v3.1/all');
 })
-const region = document.querySelector("#region");
 
+//filter by region
+const region = document.querySelector("#region");
 region.addEventListener("click",function(){
     if(region.value == "Africa") {
         fetchData('https://restcountries.com/v3.1/region/africa');
@@ -40,6 +43,7 @@ region.addEventListener("click",function(){
     
 });
 
+//loading from api
 async function fetchData(api) {
     try {
         const res = await fetch(api);
@@ -55,8 +59,16 @@ async function fetchDetails(name) {
         const res = await fetch('https://restcountries.com/v3.1/name/'+name);
         const data = await res.json();
 
+        function borders() {
+            const border = document.querySelector(".border");
+            
+            Object.values(data[0].borders).forEach(element => {
+                border.innerHTML += `
+                    <p>${element}</p>
+                `
+            });
+        }
 
-        console.log(data.name);
         $(".details").html(
             `<div class="detail">
             <div class="sel">
@@ -85,7 +97,6 @@ async function fetchDetails(name) {
                 <div class="row2">
                     <h3>Border Countries: </h3>
                     <div class="border">
-                    ${Object.values(data[0].borders) }
                     </div>
                 </div>
             </div>
@@ -95,9 +106,12 @@ async function fetchDetails(name) {
             $(".container").css("display", "block");
             $(".details").css("display", "none");
         });
+
     } catch (error) {
         console.log(error);
     }
+
+    borders();
 }
 
 function drawFlags(data) {
@@ -140,7 +154,7 @@ function drawFlags(data) {
     });
 }
 
-
+//serarch by name of country
 const searchInput = document.querySelector(".input");
 searchInput.addEventListener("input", e => {
     const value = e.target.value;
@@ -155,8 +169,7 @@ searchInput.addEventListener("input", e => {
     });
 });
 
-
-
+//loader
 $(window).on("load",function(){
     $(".loading-wrapper").fadeOut("slow")
 })
