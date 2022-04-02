@@ -117,8 +117,6 @@ async function fetchDetails(name) {
 function drawFlags(data) {
     let ele = '';
     for (let [index, item] of data.entries()) {
-    console.log(item);
-        
         ele += `
         <div class="card ${item.name.common}" id = "card${item.name.common}">
             <img src="${item.flags.svg}" alt="Bandera ${item.name.common}" class="img-fluid">
