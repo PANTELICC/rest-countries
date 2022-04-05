@@ -143,7 +143,9 @@ function drawFlags(data) {
     $(".card").click(function () {
         var id = this.getAttribute('id');
         var cname = id.split("d")[1];
-
+        
+        
+        $(".details").html('');
         $(".container").css("display", "none");
         $(".details").css("display", "block");
         fetchDetails(cname);
