@@ -40,7 +40,8 @@ region.addEventListener("click",function(){
     else if(region.value == "All") {
         fetchData('https://restcountries.com/v3.1/all');
     }
-    
+    const searchInput = document.querySelector(".input");
+    searchInput.value = "";
 });
 
 //loading from api
